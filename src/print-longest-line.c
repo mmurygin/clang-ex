@@ -1,11 +1,9 @@
 // prints the longest line in input
 
 #include <stdio.h>
+#include "include/string.h"
 
 #define MAX_LINE_SIZE 100
-
-int m_getline(char * s, int string_limit);
-void m_copyline(char * src, char * dst);
 
 int main() {
     char line [MAX_LINE_SIZE + 1] = {0};
@@ -23,28 +21,4 @@ int main() {
     printf("%s\n", max_line);
 
     return 0;
-}
-
-void m_copyline(char * src, char * dst) {
-    int i = 0;
-    while ((dst[i] = src[i]) != '\0') {
-        ++i;
-    }
-}
-
-int m_getline(char * s, int string_limit) {
-    int i = 0;
-
-    char c;
-    while ((c = getchar()) != EOF && c != '\n') {
-        s[i] = c;
-
-        if (++i == string_limit) {
-            break;
-        }
-    }
-
-    s[i] = '\0';
-
-    return i;
 }
