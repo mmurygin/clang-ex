@@ -23,3 +23,25 @@ int m_getline(char * s, int string_limit) {
 
     return c == EOF ? EOF : i;
 }
+
+int m_strlen(char * str) {
+    int i = 0;
+
+    while (str[i] != '\0') {
+        ++i;
+    }
+
+    return i;
+}
+
+int m_reverse(char * str) {
+    int len = m_strlen(str);
+
+    char other[len + 1];
+
+    m_copyline(str, other);
+
+    for (int i = 0; i < len; i++) {
+        str[i] = other[len - i - 1];
+    }
+}
