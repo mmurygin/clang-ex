@@ -1,3 +1,5 @@
+// test array inicialization
+
 #include <stdio.h>
 
 #define LENGTH 10

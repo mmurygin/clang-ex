@@ -1,3 +1,5 @@
+// prints histogram of words length in input
+
 #include <stdio.h>
 
 #define MAX_WORD_LENGTH 10

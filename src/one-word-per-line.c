@@ -1,3 +1,5 @@
+// prints one word per line
+
 #include <stdio.h>
 #include <stdbool.h>
 

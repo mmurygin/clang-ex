@@ -1,3 +1,5 @@
+// prints the longest line in input
+
 #include <stdio.h>
 
 #define MAX_LINE_SIZE 100

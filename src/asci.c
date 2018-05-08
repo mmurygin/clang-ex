@@ -1,3 +1,5 @@
+// prints asci code of a charactoer
+
 #include <stdio.h>
 
 int main() {
