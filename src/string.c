@@ -21,5 +21,5 @@ int m_getline(char * s, int string_limit) {
 
     s[i] = '\0';
 
-    return i;
+    return c == EOF ? EOF : i;
 }
