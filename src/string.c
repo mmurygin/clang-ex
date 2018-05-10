@@ -10,7 +10,7 @@ void m_copyline(char * src, char * dst) {
 int m_getline(char * s, int string_limit) {
     int i = 0;
 
-    char c;
+    int c;
     while ((c = getchar()) != EOF && c != '\n') {
         s[i] = c;
 
