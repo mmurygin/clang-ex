@@ -1,11 +1,34 @@
-// prints histogram of words length in input
+// Exercise 1 - 13.
+
+// Write a program to print a histogram of the lengths of words in its input. It is easy to
+// draw the histogram with the bars horizontal; a vertical orientation is more challenging.
 
 #include <stdio.h>
 
 #define MAX_WORD_LENGTH 10
 #define HISTOGRAM_CHAR 'I'
 
-void fill_words_array(int * arr) {
+void fill_words_array(int * arr);
+void print_histogram(int *arr);
+void print_footer();
+
+int main() {
+    int arr[MAX_WORD_LENGTH] = {0};
+
+    fill_words_array(arr);
+
+    putchar('\n');
+
+    print_histogram(arr);
+
+    print_footer();
+
+    putchar('\n');
+
+    return 0;
+}
+
+void fill_words_array(int *arr) {
     char c;
     int length = 0;
 
@@ -62,20 +85,4 @@ void print_footer() {
     for (int i = 0; i < MAX_WORD_LENGTH; ++i) {
         printf(" %d ", i + 1);
     }
-}
-
-int main() {
-    int arr[MAX_WORD_LENGTH] = {0};
-
-    fill_words_array(arr);
-
-    putchar('\n');
-
-    print_histogram(arr);
-
-    print_footer();
-
-    putchar('\n');
-
-    return 0;
 }
