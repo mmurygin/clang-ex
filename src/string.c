@@ -24,7 +24,32 @@ int m_getline(char * s, int string_limit) {
     return c == EOF ? EOF : i;
 }
 
-int m_strlen(char * str) {
+int m_strindex(const char * str, const char * pattern) {
+    int str_index = 0;
+    int pattern_index = 0;
+
+    while (str[str_index] != '\0') {
+        while (1) {
+            char p = pattern[pattern_index];
+
+            if (p == '\0') {
+                return str_index - pattern_index;
+            }
+
+            if (str[str_index] == p) {
+                ++str_index;
+                ++pattern_index;
+            } else {
+                pattern_index = 0;
+                break;
+            }
+        }
+    }
+
+    return -1;
+}
+
+int m_strlen(const char * str) {
     int i = 0;
 
     while (str[i] != '\0') {
