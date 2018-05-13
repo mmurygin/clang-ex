@@ -14,7 +14,7 @@ int main() {
     while ((line_length = m_getline(line, MAX_LINE_SIZE)) != EOF) {
         if (line_length > max_length) {
             max_length = line_length;
-            m_copyline(line, max_line);
+            m_strcopy(line, max_line);
         }
     }
 

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void m_copyline(char * src, char * dst) {
+void m_strcopy(char * src, char * dst) {
     int i = 0;
     while ((dst[i] = src[i]) != '\0') {
         ++i;
@@ -49,6 +49,20 @@ int m_strindex(const char * str, const char * pattern) {
     return -1;
 }
 
+int m_strcharindex(const char * str, char search)
+{
+    char c;
+    for (int i = 0; (c = str[i]) != '\0'; ++i)
+    {
+        if (c == search)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 int m_strlen(const char * str) {
     int i = 0;
 
@@ -64,7 +78,7 @@ int m_reverse(char * str) {
 
     char other[len + 1];
 
-    m_copyline(str, other);
+    m_strcopy(str, other);
 
     for (int i = 0; i < len; i++) {
         str[i] = other[len - i - 1];
