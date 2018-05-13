@@ -14,6 +14,17 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
+        },
+        {
+            "name": "Debug gdbt",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "build gdbt",
+            "program": "${workspaceFolder}/bin/gdbt",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
         }
     ]
 }

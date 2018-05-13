@@ -8,6 +8,8 @@
             "type": "shell",
             "command": "gcc",
             "args": [
+                "-g3",
+                "-o0",
                 "src/grep.c",
                 "src/string.c",
                 "-o",
@@ -16,6 +18,22 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "build gdbt",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-o0",
+                "-g3",
+                "-o",
+                "bin/gdbt",
+                "src/test-gdb.c",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
+
     ]
 }
