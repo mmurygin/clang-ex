@@ -5,12 +5,16 @@ int main() {
 
     while ((c = getchar()) != EOF) {
         if (c == '\t') {
-            printf("tab");
+            printf("tab\n");
+            continue;
         }
 
         if (c == '\n') {
-            printf("new line");
+            printf("new line\n");
+            continue;
         }
+
+        printf("%d\n", c);
     }
 
     return 0;
