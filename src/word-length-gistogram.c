@@ -29,7 +29,7 @@ int main() {
 }
 
 void fill_words_array(int *arr) {
-    char c;
+    int c;
     int length = 0;
 
     while ((c = getchar()) != EOF)
