@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build grep",
+            "label": "grep",
             "type": "shell",
             "command": "gcc",
             "args": [
@@ -17,23 +17,27 @@
             ],
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": "build",
         },
         {
-            "label": "build gdbt",
+            "label": "htoi",
             "type": "shell",
             "command": "gcc",
             "args": [
                 "-o0",
                 "-g3",
+                "-lm",
                 "-o",
-                "bin/gdbt",
-                "src/test-gdb.c",
+                "bin/htoi",
+                "src/htoi.c",
+                "src/string.c",
+                "src/type.c",
             ],
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": "build"
         }
-
     ]
 }

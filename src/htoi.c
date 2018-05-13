@@ -5,6 +5,7 @@ The allowable digits are 0 through 9, a through f, and A through F.
 */
 
 #include <stdio.h>
+#include <math.h>
 #include "include/string.h"
 #include "include/type.h"
 
@@ -18,7 +19,7 @@ int main()
     char str[MAX_LINE_LENGTH] = { 0 };
     m_getline(str, MAX_LINE_LENGTH);
 
-    printf("Got line %s", str);
+    printf("Got line %s\n", str);
 
     int int_val = htoi(str);
 
@@ -72,7 +73,8 @@ int htoi(char * str) {
             return -1;
         }
 
-        result += int_val * (16 ^ i);
+        result += int_val * pow(16, i);
+        ++i;
     }
 
     return result;
