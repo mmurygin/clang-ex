@@ -12,7 +12,7 @@ unsigned setbits (unsigned x, unsigned p, unsigned n, unsigned y)
 
 int main()
 {
-    unsigned result = setbits(157, 4, 3, 122);
+    unsigned result = setbits(157, 5, 3, 122);
     unsigned expect_result = 137;
     if (result != expect_result)
     {

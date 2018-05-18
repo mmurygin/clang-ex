@@ -7,13 +7,13 @@ position p inverted (i.e., 1 changed into 0 and vice versa), leaving the others 
 
 unsigned invertbits(unsigned x, unsigned p, unsigned n)
 {
-    return x ^ (~(~0 << n) << (p + 1 - n));
+    return x ^ (~(~0 << n) << (p - n));
 }
 
 int main()
 {
     unsigned result = invertbits(141, 4, 3);
-    unsigned expect_result = 145;
+    unsigned expect_result = 131;
     if (result != expect_result)
     {
         printf("Error: %u != %u\n", result, expect_result);

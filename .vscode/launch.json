@@ -25,6 +25,17 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
+        },
+        {
+            "name": "Debug binsearch",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "binsearch",
+            "program": "${workspaceFolder}/bin/binsearch",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
         }
     ]
 }

@@ -38,6 +38,22 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "label": "binsearch",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-o0",
+                "-g3",
+                "-o",
+                "bin/binsearch",
+                "src/binary-search.c"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
     ]
 }
