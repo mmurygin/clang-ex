@@ -6,6 +6,8 @@
 
 void insertion_sort(int * arr, int len);
 
+int equality_checks = 0;
+
 int main() {
     int * arr = malloc(sizeof(int) * MAX_ARRAY_SIZE);
 
@@ -20,6 +22,7 @@ int main() {
     insertion_sort(arr, arr_len);
 
     print_array(arr, arr_len);
+    printf("Equality checks: %d\n", equality_checks);
     free(arr);
 
     return 0;
@@ -31,10 +34,16 @@ void insertion_sort(int * arr, int len)
     {
         for (int i = sorted_edge; i > 0; --i)
         {
+            ++equality_checks;
             if (arr[i] < arr[i-1])
             {
                 swap(arr, i, i-1);
             }
+            else
+            {
+                break;
+            }
+
         }
     }
 }
