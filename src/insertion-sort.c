@@ -1,17 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "include/array.h"
 
 #define MAX_ARRAY_SIZE 100
 
-void insertion_sort(int * arr, int len)
-{
-    return;
-}
+void insertion_sort(int * arr, int len);
 
 int main() {
     int * arr = malloc(sizeof(int) * MAX_ARRAY_SIZE);
 
-    puts("Please enter integer sequence to sort (split with spaces, finish with new line)");
+    puts("Please enter integer sequence to sort (finish with ctrl+d)");
 
     int val;
     int arr_len = 0;
@@ -21,11 +19,22 @@ int main() {
 
     insertion_sort(arr, arr_len);
 
-    for (int i = 0; i < arr_len; i++) {
-        printf("%d ", arr[i]);
-    }
-
+    print_array(arr, arr_len);
     free(arr);
 
     return 0;
+}
+
+void insertion_sort(int * arr, int len)
+{
+    for (int sorted_edge = 1; sorted_edge < len; ++sorted_edge)
+    {
+        for (int i = sorted_edge; i > 0; --i)
+        {
+            if (arr[i] < arr[i-1])
+            {
+                swap(arr, i, i-1);
+            }
+        }
+    }
 }
