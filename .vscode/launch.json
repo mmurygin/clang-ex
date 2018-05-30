@@ -36,6 +36,17 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
+        },
+        {
+            "name": "Debug calc",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "calc",
+            "program": "${workspaceFolder}/bin/calc",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
         }
     ]
 }

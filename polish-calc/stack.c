@@ -1,11 +1,12 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 int sp = 0;
-int * stack = NULL;
+double * stack = NULL;
 
 void init_stack(int size)
 {
-    stack = malloc(sizeof(int) * size);
+    stack = malloc(sizeof(double) * size);
 }
 
 void cleanup_stack()
@@ -14,12 +15,20 @@ void cleanup_stack()
     stack = NULL;
 }
 
-void push(int value)
+void push(double value)
 {
     stack[sp++] = value;
 }
 
-int pop()
+double pop()
 {
-    return stack[--sp];
+    if (sp > 0)
+    {
+        return stack[--sp];
+    }
+    else
+    {
+        puts("Error stack is empty");
+        return 0.0;
+    }
 }

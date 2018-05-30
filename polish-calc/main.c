@@ -14,29 +14,39 @@ void calculate();
 
 int main()
 {
+    init_stack(STACK_SIZE);
+
     char str[STR_SIZE] = { '\0' };
     int op = 0;
     while((op = getop(str, STR_SIZE)) != EOF)
     {
+        double op1, op2;
         switch (op)
         {
             case NUMBER:
-                printf("Got number: %s\n", str);
+                push(atof(str));
                 break;
             case '+':
-                printf("Got char: %c\n", op);
+                push(pop() + pop());
+                break;
+            case '-':
+                op1 = pop();
+                op2 = pop();
+                push(op2 - op1);
+                break;
+            case '*':
+                push(pop() * pop());
+                break;
+            case '/':
+                op1 = pop();
+                op2 = pop();
+                push(op2 / op1);
+                break;
             default:
-                calculate();
+                printf("Result: %.2f\n", pop());
                 break;
         }
     }
 
-    puts("Done!");
-
     return 0;
-}
-
-void calculate()
-{
-    puts("Result: ");
 }
