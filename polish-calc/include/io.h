@@ -3,5 +3,6 @@
 
 char getch();
 char ungetch();
+int getop(char * str, int limit);
 
 #endif

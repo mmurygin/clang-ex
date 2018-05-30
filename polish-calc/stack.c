@@ -3,7 +3,7 @@
 int sp = 0;
 int * stack = NULL;
 
-void init_stack(size)
+void init_stack(int size)
 {
     stack = malloc(sizeof(int) * size);
 }
