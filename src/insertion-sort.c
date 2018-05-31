@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "include/array.h"
 
 #define MAX_ARRAY_SIZE 100
@@ -9,21 +7,12 @@ void insertion_sort(int * arr, int len);
 int equality_checks = 0;
 
 int main() {
-    int * arr = malloc(sizeof(int) * MAX_ARRAY_SIZE);
-
-    puts("Please enter integer sequence to sort (finish with ctrl+d)");
-
-    int val;
-    int arr_len = 0;
-    while ((scanf( "%d", &val)) == 1) {
-        arr[arr_len++] = val;
-    }
+    int * arr = 0;
+    int arr_len = init_array(&arr, MAX_ARRAY_SIZE);
 
     insertion_sort(arr, arr_len);
 
     print_array(arr, arr_len);
-    printf("Equality checks: %d\n", equality_checks);
-    free(arr);
 
     return 0;
 }
