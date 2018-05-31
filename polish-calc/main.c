@@ -42,11 +42,12 @@ int main()
                 op2 = pop();
                 push(op2 / op1);
                 break;
-            default:
+            case '\n':
                 printf("Result: %.2f\n", pop());
                 break;
         }
     }
+
 
     return 0;
 }
