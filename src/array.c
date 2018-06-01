@@ -28,8 +28,16 @@ int init_array (int ** arr_pointer, int max_size)
     int i = 0;
     while (i < max_size && scanf("%d", &val) == 1)
     {
-        *arr_pointer[i++] = val;
+        (*arr_pointer)[i++] = val;
     }
 
     return i == max_size ? i - 1 : i;
+}
+
+void copy_array(int *src, int *dst, int len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        dst[i] = src[i];
+    }
 }

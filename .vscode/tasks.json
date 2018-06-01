@@ -68,6 +68,42 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "label": "insertion",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "insertion-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "merge-sort",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "merge-sort-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "quick-sort",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "quick-sort-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
     ]
 }
