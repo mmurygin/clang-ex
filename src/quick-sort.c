@@ -40,5 +40,5 @@ void quick_sort(int *from, int *to)
     }
 
     quick_sort(from, from + pivot);
-    quick_sort(from + pivot, to);
+    quick_sort(from + pivot + 1, to);
 }
