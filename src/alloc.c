@@ -1,31 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-#define ARRAY_SIZE 100000000
+#define ALLOC_SIZE 100000
 
-int main()
+static char alloc_buffer[ALLOC_SIZE];
+static char *alloc_pointer = alloc_buffer;
+
+char *alloc(int size)
 {
-    int *x;
+    printf("Free: %u\n", alloc_buffer + ALLOC_SIZE - alloc_pointer);
 
-    if ((x = (int *)malloc(sizeof(int) * ARRAY_SIZE)) == NULL)
+    if (size > alloc_buffer + ALLOC_SIZE - alloc_pointer)
     {
-        printf("memory allocation failure.\n");
-        return 1;
+        puts("Out Of memory");
+        return NULL;
     }
 
-    puts("Memory allocation successfull\n");
-    long i = ARRAY_SIZE;
-    while (1)
-    {
-        if (i < 0)
-        {
-            i = ARRAY_SIZE;
-        }
+    char * p = alloc_pointer;
 
-        putchar(x[--i] + 48);
-    }
+    alloc_pointer+=size;
 
-    free(x);
+    return p;
+}
 
-    return 0;
+void afree(char * p)
+{
+    alloc_pointer = p;
 }
