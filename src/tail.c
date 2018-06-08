@@ -3,6 +3,8 @@
 #include <string.h>
 #include <sys/types.h>
 
+#include "include/str-queue.h"
+
 void tail(int n);
 
 int main(int argc, char const *argv[])
@@ -23,5 +25,24 @@ int main(int argc, char const *argv[])
 
 void tail (int n)
 {
-    printf("n = %d\n", n);
+    init_queue(n);
+
+    char *buffer = NULL;
+    size_t len = 0;
+    while ((getline(&buffer, &len, stdin)) != EOF)
+    {
+        if (queue_len() == n)
+        {
+            char * str = dequeue();
+            free(str);
+        }
+
+        enqueue(buffer);
+        buffer = NULL;
+    }
+
+    while (queue_len())
+    {
+        printf("%s", dequeue());
+    }
 }

@@ -66,6 +66,16 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
+        },
+        {
+            "name": "Debug tail",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "tail",
+            "program": "${workspaceFolder}/bin/tail",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
         }
     ]
 }

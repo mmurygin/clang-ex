@@ -104,6 +104,19 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "label": "tail",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "tail-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
+
     ]
 }
