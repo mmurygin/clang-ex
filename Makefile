@@ -36,3 +36,10 @@ word-count:
 
 word-count-debug:
 	gcc -o0 -g3 $(WC_ARGS)
+
+BTREE_ARGS=src/binary-tree.c src/test-binary-tree.c -o bin/btree
+btree:
+	gcc $(BTREE_ARGS)
+
+btree-debug:
+	gcc -o0 -g3 $(BTREE_ARGS)

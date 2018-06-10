@@ -86,6 +86,26 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
+        },
+        {
+            "name": "Debug wc",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "word-count",
+            "program": "${workspaceFolder}/bin/wc",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+        },
+        {
+            "name": "btree",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "btree",
+            "program": "${workspaceFolder}/bin/btree",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
         }
     ]
 }
