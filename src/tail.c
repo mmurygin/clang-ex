@@ -33,8 +33,7 @@ void tail (int n)
     {
         if (queue_len() == n)
         {
-            char * str = dequeue();
-            free(str);
+            free(dequeue());
         }
 
         enqueue(buffer);

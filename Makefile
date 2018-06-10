@@ -28,3 +28,11 @@ tail:
 
 tail-debug:
 	gcc -o0 -g3 $(TAIL_ARGS)
+
+
+WC_ARGS=src/word-count.c -o bin/wc
+word-count:
+	gcc $(WC_ARGS)
+
+word-count-debug:
+	gcc -o0 -g3 $(WC_ARGS)

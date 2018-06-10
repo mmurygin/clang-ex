@@ -116,7 +116,18 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "label": "word-count",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "word-count-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
-
     ]
 }
