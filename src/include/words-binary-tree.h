@@ -3,7 +3,7 @@
 
 struct word_key
 {
-    char *word;
+    const char *word;
     int count;
 };
 
@@ -14,7 +14,7 @@ struct node
     struct node *right;
 };
 
-struct word_key * get_node_by_word(const struct node *root, const char * word);
-struct node *add_new_word_to_tree(const struct node *root, const char *word);
+struct node *get_node_by_word(struct node *root, const char * word);
+struct node *add_new_word_to_tree(struct node *root, const char *word);
 
 #endif
