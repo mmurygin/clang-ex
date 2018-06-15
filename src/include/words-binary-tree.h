@@ -3,7 +3,7 @@
 
 struct word_key
 {
-    const char *word;
+    char *word;
     int count;
 };
 

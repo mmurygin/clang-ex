@@ -140,7 +140,18 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "label": "wc-btree",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "wc-btree-debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
-
     ]
 }

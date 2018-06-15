@@ -9,7 +9,7 @@ struct word_key *create_word_key(const char *word)
 {
     struct word_key *word_key = malloc(sizeof(struct word_key));
     word_key->count = 1;
-    word_key->word = word;
+    word_key->word = strdup(word);
 
     return word_key;
 }

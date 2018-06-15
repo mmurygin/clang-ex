@@ -40,7 +40,7 @@ void print_word_keys(const struct node *root)
 {
     if (root)
     {
-        printf("%s: %d", root->value->word, root->value->count);
+        printf("%s: %d\n", root->value->word, root->value->count);
         print_word_keys(root->left);
         print_word_keys(root->right);
     }
