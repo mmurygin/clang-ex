@@ -5,12 +5,13 @@
 
 #define HASH_TABLE_SIZE 100
 
-short _has_key_in_nlist(const struct nlist *nlist, const char *key);
-void _add_value_to_nlist(struct nlist *nlist, const char *key, const char *value);
+short _has_key(const struct nlist *nlist, const char *key);
+void _set_key(struct nlist *nlist, const char *key, const char *value);
+char *_get_value(struct nlist *nlist, const char *key);
 
 static struct nlist *hashtable[HASH_TABLE_SIZE] = {};
 
-unsigned _get_hash_value(const char * key)
+unsigned _get_hash(const char * key)
 {
     unsigned hashval;
 
@@ -22,7 +23,7 @@ unsigned _get_hash_value(const char * key)
     return hashval % HASH_TABLE_SIZE;
 }
 
-short _has_key_in_nlist(const struct nlist *nlist, const char * key)
+short _has_key(const struct nlist *nlist, const char * key)
 {
     if (nlist == NULL)
     {
@@ -34,14 +35,36 @@ short _has_key_in_nlist(const struct nlist *nlist, const char * key)
         return IN;
     }
 
-    return _has_key_in_nlist(nlist->next, key);
+    return _has_key(nlist->next, key);
 }
 
 short has_key(const char *key)
 {
-    unsigned hash = _get_hash_value(key);
+    unsigned hash = _get_hash(key);
 
-    return _has_key_in_nlist(hashtable[hash], key);
+    return _has_key(hashtable[hash], key);
+}
+
+char *_get_value(struct nlist *nlist, const char *key)
+{
+    if (!nlist)
+    {
+        return NULL;
+    }
+
+    if (strcmp(nlist->key, key) == 0)
+    {
+        return nlist->value;
+    }
+
+    return _get_value(nlist->next, key);
+}
+
+char *get_value(const char *key)
+{
+    unsigned hash = _get_hash(key);
+
+    return _get_value(hashtable[hash], key);
 }
 
 struct nlist *_allocnlist(const char *key, const char *value)
@@ -54,11 +77,11 @@ struct nlist *_allocnlist(const char *key, const char *value)
     return nlist;
 }
 
-void _add_value_to_nlist(struct nlist *nlist, const char *key, const char *value)
+void _set_key(struct nlist *nlist, const char *key, const char *value)
 {
     if (nlist->next)
     {
-        _add_value_to_nlist(nlist->next, key, value);
+        _set_key(nlist->next, key, value);
     }
     else
     {
@@ -66,27 +89,21 @@ void _add_value_to_nlist(struct nlist *nlist, const char *key, const char *value
     }
 }
 
-void add_key(const char *key, const char *value)
+void set_key(const char *key, const char *value)
 {
-    if (has_key(key))
+    unsigned hash = _get_hash(key);
+    if (!hashtable[hash])
     {
-        printf("Error: try to add dublicate key \"%s\"", key);
+        hashtable[hash] = _allocnlist(key, value);
         return;
     }
 
-    unsigned hash = _get_hash_value(key);
-
-    if (hashtable[hash])
+    char * hashed_value = _get_value(hashtable[hash], key);
+    if (hashed_value)
     {
-        _add_value_to_nlist(hashtable[hash], key, value);
+        strcpy(hashed_value, value);
+        return;
     }
-    else
-    {
-        hashtable[hash] = _allocnlist(key, value);
-    }
-}
 
-char * get_key(const char *key)
-{
-
+    _set_key(hashtable[hash], key, value);
 }

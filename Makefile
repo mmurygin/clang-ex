@@ -50,3 +50,6 @@ wc-btree:
 
 wc-btree-debug:
 	gcc -o0 -g3 $(WORDS_BTREE_ARGS)
+
+hashtable:
+	gcc -o0 -g3 src/test-hashtable.c src/hashtable.c -o bin/hashtable

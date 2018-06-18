@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "include/hashtable.h"
 
 #define MAX_STR_SIZE 100
 
@@ -11,13 +12,22 @@ int main()
 
     while (scanf("%s %s", key, value) != EOF)
     {
-
+        set_key(key, value);
     }
 
     puts("Please input keys to get");
     while (scanf("%s", key) != EOF)
     {
-        /*code*/
+        char * value = get_value(key);
+
+        if (value)
+        {
+            printf("%s: %s\n", key, value);
+        }
+        else
+        {
+            printf("Can not find value for key %s\n", key);
+        }
     }
 
     return 0;
