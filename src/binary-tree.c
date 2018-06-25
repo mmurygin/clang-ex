@@ -137,5 +137,5 @@ void traverse_deep(const struct node *root)
         stack = malloc(MAX_TREE_NODES * sizeof(struct node *));
     }
 
-    stack[0] = root;
+    // implement
 }
