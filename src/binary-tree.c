@@ -44,7 +44,7 @@ int get_min_tree_depth(struct node *root)
         left_branch_depth + 1;
 }
 
-void add_value_balanced(struct node *root, int value)
+void add_value_as_balanced_tree(struct node *root, int value)
 {
     int left_branch_depth = get_min_tree_depth(root->left);
     int right_branch_depth = get_min_tree_depth(root->right);
@@ -62,15 +62,15 @@ void add_value_balanced(struct node *root, int value)
 
     if (left_branch_depth <= right_branch_depth)
     {
-        add_value_balanced(root->left, value);
+        add_value_as_balanced_tree(root->left, value);
     }
     else
     {
-        add_value_balanced(root->right, value);
+        add_value_as_balanced_tree(root->right, value);
     }
 }
 
-void add_value(struct node *root, int value)
+void add_value_as_binary_tree(struct node *root, int value)
 {
     if (root->value > value)
     {
@@ -80,7 +80,7 @@ void add_value(struct node *root, int value)
         }
         else
         {
-            add_value(root->right, value);
+            add_value_as_binary_tree(root->right, value);
         }
     }
     else if (root->value < value)
@@ -91,7 +91,7 @@ void add_value(struct node *root, int value)
         }
         else
         {
-            add_value(root->left, value);
+            add_value_as_binary_tree(root->left, value);
         }
     }
     else
@@ -112,30 +112,18 @@ struct node *init_tree_from_stdin()
 
     while (scanf("%d", &val) != EOF)
     {
-        add_value_balanced(root, val);
+        add_value_as_binary_tree(root, val);
     }
 
     return root;
 }
 
-void traverse_pre_order(const struct node *root)
+void traverse_deep(const struct node *root)
 {
     if (root)
     {
         printf("%d ", root->value);
-        traverse_pre_order(root->left);
-        traverse_pre_order(root->right);
+        traverse_deep(root->left);
+        traverse_deep(root->right);
     }
-}
-
-void traverse_deep(const struct node *root)
-{
-    static struct node * stack = NULL;
-    static int sp = 0;
-    if (stack == NULL)
-    {
-        stack = malloc(MAX_TREE_NODES * sizeof(struct node *));
-    }
-
-    // implement
 }

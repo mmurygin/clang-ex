@@ -9,7 +9,7 @@ struct node
 };
 
 struct node *init_tree_from_stdin();
-int get_tree_depth(struct node * root);
-void traverse_pre_order(const struct node *root);
+int get_max_tree_depth(struct node *root);
+void traverse_deep(const struct node *root);
 
 #endif

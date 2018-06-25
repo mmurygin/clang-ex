@@ -43,3 +43,13 @@ btree:
 
 btree-debug:
 	gcc -o0 -g3 $(BTREE_ARGS)
+
+WORDS_BTREE_ARGS=src/test-words-btree.c src/words-binary-tree.c -o bin/wc-btree
+wc-btree:
+	gcc $(WORDS_BTREE_ARGS)
+
+wc-btree-debug:
+	gcc -o0 -g3 $(WORDS_BTREE_ARGS)
+
+hashtable:
+	gcc -o0 -g3 src/test-hashtable.c src/hashtable.c -o bin/hashtable

@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug grep",
+            "name": "grep",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "grep",
@@ -16,7 +16,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug htoi",
+            "name": "htoi",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "htoi",
@@ -27,7 +27,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug binsearch",
+            "name": "binsearch",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "binsearch",
@@ -38,7 +38,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug insertion",
+            "name": "insertion",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "insertion",
@@ -48,7 +48,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug merge",
+            "name": "merge-sort",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "merge-sort",
@@ -58,7 +58,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug quick",
+            "name": "quick-sort",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "quick-sort",
@@ -68,7 +68,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug tail",
+            "name": "tail",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "tail",
@@ -78,17 +78,7 @@
             "MIMode": "gdb",
         },
         {
-            "name": "Debug wc",
-            "type": "cppdbg",
-            "request": "launch",
-            "preLaunchTask": "word-count",
-            "program": "${workspaceFolder}/bin/wc",
-            "cwd": "${workspaceFolder}",
-            "externalConsole": false,
-            "MIMode": "gdb",
-        },
-        {
-            "name": "Debug wc",
+            "name": "wc",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "word-count",
@@ -103,6 +93,16 @@
             "request": "launch",
             "preLaunchTask": "btree",
             "program": "${workspaceFolder}/bin/btree",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+        },
+        {
+            "name": "wc-btree",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "btree",
+            "program": "${workspaceFolder}/bin/wc-btree",
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
             "MIMode": "gdb",
