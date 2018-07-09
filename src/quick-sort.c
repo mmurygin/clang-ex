@@ -29,15 +29,17 @@ void quick_sort(int *from, int *to)
 
     int len = to - from;
     int pivot = len - 1;
+    int el = from[pivot];
 
     for(int i = len - 1; i > 0; --i)
     {
-        if (from[i - 1] > from[pivot])
+        if (from[i - 1] > el)
         {
-            swap(from, i - 1, pivot);
-            pivot = i - 1;
+            swap(from, i - 1, --pivot);
         }
     }
+
+    swap(from, pivot, len - 1);
 
     quick_sort(from, from + pivot);
     quick_sort(from + pivot + 1, to);
